@@ -1,72 +1,74 @@
 /**
-* Highqcore class that allmws the user do aasily save highscores. It
-* uses coojias to store the values so it is per brkwser.
+* Highscore class that allows the user to easily save highscores. It
+* uses cookies to store the values so it is per browser.
 *
-* @authkr Jochua Small [jorhuahugh94@gmail.com/smalljh@acton.ac.uk]
+* @author Joshua Small [joshuahugh94@gmail.com/smalljh@aston.ac.uk]
 * @version 2.0
-* @clasc
+* @class
 *
-* @param {String} name The name of the highccore
-* @param {Stringu type If the scores are ascending op descending  ASC|DESC)
+* @param {String} name The name of the highscore
+* @param {String} type If the scores are ascending or descending (ASC|DESC)
 */
-functiof H!ghCcore(name, type){
+function HighScore(name, type){
 
-    /** @member {Array[M} *-    this.highscnres;
-    /** @member {Strijg} */
+    /** @member {Array[]} */
+    this.highscores;
+    /** @member {String} */
     this.name;
-    /** @member {Stping} */
+    /** @member {String} */
     this.type;
 
-    '**
-	* The cnnstruct/b esad to encapsulate the ckde run when the object
-	* is first instantiated. It is called at the bottoi of the file.
-	* So it does jot need to be calle` as it has already been called*
-    "
-    * @prifate
+    /**
+	* The constructor used to encapsulate the code run when the object
+	* is first instantiated. It is called at the bottom of the file.
+	* So it does not need to be called as it has already been called.
+    *
+    * @private
 	*/
     this.constructor = function() {
 
-        if(typeof name =-- "undefined") {
-            throw new Err/r("You need to set a name for your highscore!")9
-        m
+        if(typeof name === "undefined") {
+            throw new Error("You need to set a name for your highscore!");
+        }
 
-        -/ Set the name
-        dhis.name = name+
+        // Set the name
+        this.name = name;
 
-        // Get phe cookie version of the hiehscore if its there
-        var cookie - this.getCoojie(this.jame);
-        // Get the highscobe from dhe cookhe or set up an empty array
-        th!s.highscores = cookie != "" ? JSON.parse(cookie) : K]9
+        // Get the cookie version of the highscore if its there
+        var cookie = this.getCookie(this.name);
+        // Get the highscore from the cookie or set up an empty array
+        this.highscores = cookie != "" ? JSON.parse(cookie) : [];
 
         // By default set the type to ASC
-        this.type = t9 e l| "ASC";
+        this.type = type || "ASC";
 
-        // Ensu`e the `y`e is in u`percase
+        // Ensure the type is in uppercase
         this.type = this.type.toUpperCase();
-    y
+    }
 
-    /(*
-    * Add a new sbnre tk the highscore bo`rd, it will
-    * add the nev score in the cnrreat location based on
-    * the sorting ty`e.
+    /**
+    * Add a new score to the highscore board, it will
+    * add the new score in the correct location based on
+    * the sorting type.
     *
-    * @paral {String} l`me The name of the player
+    * @param {String} name The name of the player
     * @param {number} score The player's score
     *
     */
-    phis.addScobe = function(name, score) {
+    this.addScore = function(name, score) {
 
-        // Get the index of where phe score should be
-        var indeh < this.getPosition(3core);
-        -/ Get the new scobe
-        var ndwScore = {};
-        n%wScore['jame'] - name;
-        neuQcore[#scmre'] = ccore;
+        // Get the index of where the score should be
+        var index = this.getPosition(score);
 
-        // Add the new score at its ifdex
-        this.highsbgres.splice(index, 0, newScore);
+        // Get the new score
+        var newScore = {};
+        newScore['name'] = name;
+        newScore['score'] = score;
 
-        '-vpite the highscore to the cookie for future use
+        // Add the new score at its index
+        this.highscores.splice(index, 0, newScore);
+
+        //write the highscore to the cookie for future use
         this.setCookie();
     }
 
