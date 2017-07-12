@@ -1,24 +1,35 @@
 var game = new Game(800, 600, "Game");
 
+<<<<<<< HEAD
 var level; /*[{
+=======
+var level = [{
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
     type: 'platform',
     x: 450,
     y: 450,
     w: 200,
     h: 100
+<<<<<<< HEAD
 }, {
 	type: 'pipe',
 	x: 600,
 	y: 0,
 	speed: 2000
 }];*/
+=======
+}];
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
 
 var objects = [];
 var camerax = 0;
 var platform_sprite;
 var water_sprite;
 var cloud_sprite;
+<<<<<<< HEAD
 var pipe_sprite, oil_sprite;
+=======
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
 var sun_sprite, sun;
 var keyboard;
 var left, right, up;
@@ -26,11 +37,14 @@ var bear;
 var lt = 0;
 var bg_timer = new Timer(1000);
 
+<<<<<<< HEAD
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
     return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
 }
 
+=======
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
 function Timer(interval) {
     this.target = 0;
     this.interval = interval;
@@ -63,7 +77,11 @@ Platform.prototype.update = function() {
     this.object.setX(this.x - camerax);
 
     if (this.object.getX() < 800) {
+<<<<<<< HEAD
         this.object.child.scale.x -= 1 / Math.pow(this.object.getX(), 1.2)
+=======
+        this.object.child.scale.x -= 100 / Math.pow(this.object.getX(), 1.8)
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
     }
     if (this.object.child.scale.x < 0.05) {
         objects.splice(objects.indexOf(this), 1);
@@ -93,8 +111,11 @@ function Bear(x, y, sprite) {
     this.vx = 0;
     this.sprite = sprite;
     this.jump = false;
+<<<<<<< HEAD
 	this.vxm = 1;
 	this.oil_timer = new Timer(5000);
+=======
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
 }
 
 Bear.prototype.create = function() {
@@ -108,11 +129,19 @@ Bear.prototype.update = function() {
     if (right.isDown()) {
         this.object.playAnimation("right");
         this.object.setStopFrame(0);
+<<<<<<< HEAD
         this.vx = 100*this.vxm + 60;
     } else if (left.isDown()) {
         this.object.playAnimation("left");
         this.object.setStopFrame(8);
         this.vx = -100*this.vxm + 60;
+=======
+        this.vx = 160;
+    } else if (left.isDown()) {
+        this.object.playAnimation("left");
+        this.object.setStopFrame(8);
+        this.vx = -40;
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
     } else {
         this.vx = 0;
         this.object.stop();
@@ -127,15 +156,22 @@ Bear.prototype.update = function() {
     game.checkCollision(this.object, platform_sprite, (function() {
         if (up.isDown() && this.jump == false) {
             this.jump = true;
+<<<<<<< HEAD
             this.object.setVelocityY(-140);
+=======
+            this.object.setVelocityY(-120);
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
         } else {
             this.jump = false;
         }
     }).bind(this));
+<<<<<<< HEAD
 	
 	if (this.vxm < 1 && this.oil_timer.tick()) {
 		this.vxm = 1;
 	}
+=======
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
 }
 
 function Cloud(x, y, sprite) {
@@ -161,6 +197,7 @@ Cloud.prototype.update = function() {
         cloud.create();
         objects.push(cloud);
     }
+<<<<<<< HEAD
 }
 
 function Pipe(x, y, w, h, sprite, speed) {
@@ -231,6 +268,26 @@ function preload() {
 	oil_sprite = new Sprite("img/oil.png");
 
     bear = new Bear(250, 300, bear_sprite);
+=======
+}
+
+function standard_platform(x, y, w, h) {
+    return new MovingPlatform(x, y, w, h, platform_sprite, 0, 5, 1, 4)
+}
+
+function moving_platform(x, y, w, h, xdelta, ydelta, xspeed, yspeed) {
+    return new MovingPlatform(x, y, w, h, platform_sprite, xdelta, ydelta, xspeed, yspeed);
+}
+
+function preload() {
+    platform_sprite = new Sprite("img/tundra.png");
+    water_sprite = new Sprite("img/iceWater.png");
+    bear_sprite = new Sprite("img/bear2.png", 77, 85);
+    cloud_sprite = new Sprite("img/cloud.png");
+    sun_sprite = new Sprite("img/sun.png");
+
+    bear = new Bear(250, 100, bear_sprite);
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
 
     objects.push(bear);
     for (object of level) {
@@ -240,11 +297,16 @@ function preload() {
                 break;
             case 'movingplatform':
                 objects.push(moving_platform(object.x, object.y, object.w, object.h,
+<<<<<<< HEAD
                     object.xdelta, -object.ydelta, object.xspeed, object.yspeed));
                 break;
 			case 'pipe':
 				objects.push(pipe(object.x, object.y, object.speed));
 				break;
+=======
+                    object.xdelta, object.ydelta, object.xspeed, object.yspeed));
+                break;
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
         }
     }
 
@@ -280,6 +342,7 @@ function create() {
 function update() {
     dt = game.getGameTime() - lt;
     lt += dt;
+<<<<<<< HEAD
 
     camerax += dt * 50 / 1000;
 
@@ -293,6 +356,21 @@ function update() {
         c[0].kill();
     }
 
+=======
+
+    camerax += dt * 50 / 1000;
+
+    sun.setAngle(game.getGameTime() / 300);
+
+    water_sprite.setVelocityX(-60 + 20 * Math.cos(game.getGameTime() / 500));
+
+    if (bg_timer.tick()) {
+        var c = water_sprite.children;
+        water_sprite.create(c[c.length - 1].getX() + 68, 600 - 140);
+        c[0].kill();
+    }
+
+>>>>>>> e6fd23af7b1999a7bea8862e3c78b533cb7e1e47
     for (object of objects) {
         object.update();
     }
