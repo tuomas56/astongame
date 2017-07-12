@@ -1,0 +1,84 @@
+[{
+	type: 'platform',
+	x: 100,
+	y: 200,
+	w: 100,
+}{
+	type: 'platform',
+	x: 250,
+	y: 200,
+	w: 100,
+}{
+	type: 'movingplatform',
+	x: 400,
+	y: 200,
+	w: 150,
+	xspeed: 1,
+	yspeed: 0,
+	xdelta: 150,
+	ydelta: 0,
+}{
+	type: 'platform',
+	x: 750,
+	y: 200,
+	w: 75,
+}{
+	type: 'platform',
+	x: 900,
+	y: 250,
+	w: 50,
+}{
+	type: 'platform',
+	x: 1000,
+	y: 200,
+	w: 50,
+}{
+	type: 'platform',
+	x: 1100,
+	y: 250,
+	w: 50,
+}{
+	type: 'platform',
+	x: 1200,
+	y: 200,
+	w: 50,
+}{
+	type: 'movingplatform',
+	x: 1300,
+	y: 200,
+	w: 150,
+	xspeed: 0,
+	yspeed: 1,
+	xdelta: 0;
+	ydelta: 100,
+}{
+	type: 'platform',
+	x: 1550,
+	y: 300,
+	w: 100,
+}{
+	type: 'platform',
+	x: 1725,
+	y: 250,
+	w: 100,
+}{
+	type: 'platform',
+	x: 1900,
+	y: 200,
+	w: 50,
+}{
+	type: 'movingplatform',
+	x: 2050,
+	y: 200,
+	w: 100,
+	xspeed: 2,
+	yspeed: 0,
+	xdelta: 100,
+	ydelta: 0,
+}{
+	type: 'platform',
+	x: 2400,
+	y: 200,
+	w: 100,
+}
+]

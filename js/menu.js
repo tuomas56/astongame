@@ -66,17 +66,17 @@ function levelSelect() {
 }
 
 function btn1_update() {
-
+	window.location = "game.html?level=0";
 }
 function btn2_update() {
-	window.location = "game.html?level=%5B%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%20100%2C%0A%09y%3A%20200%2C%0A%09w%3A%20100%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%20250%2C%0A%09y%3A%20200%2C%0A%09w%3A%20100%2C%0A%7D%2C%7B%0A%09type%3A%20%27movingplatform%27%2C%0A%09x%3A%20400%2C%0A%09y%3A%20200%2C%0A%09w%3A%20150%2C%0A%09xspeed%3A%201%2C%0A%09yspeed%3A%200%2C%0A%09xdelta%3A%20150%2C%0A%09ydelta%3A%200%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%20750%2C%0A%09y%3A%20200%2C%0A%09w%3A%2075%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%20900%2C%0A%09y%3A%20250%2C%0A%09w%3A%2050%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%201000%2C%0A%09y%3A%20200%2C%0A%09w%3A%2050%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%201100%2C%0A%09y%3A%20250%2C%0A%09w%3A%2050%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%201200%2C%0A%09y%3A%20200%2C%0A%09w%3A%2050%2C%0A%7D%2C%7B%0A%09type%3A%20%27movingplatform%27%2C%0A%09x%3A%201300%2C%0A%09y%3A%20200%2C%0A%09w%3A%20150%2C%0A%09xspeed%3A%200%2C%0A%09yspeed%3A%20-1%2C%0A%09xdelta%3A%200%2C%0A%09ydelta%3A%20100%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%201550%2C%0A%09y%3A%20300%2C%0A%09w%3A%20100%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%201725%2C%0A%09y%3A%20250%2C%0A%09w%3A%20100%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%201900%2C%0A%09y%3A%20200%2C%0A%09w%3A%2050%2C%0A%7D%2C%7B%0A%09type%3A%20%27movingplatform%27%2C%0A%09x%3A%202050%2C%0A%09y%3A%20200%2C%0A%09w%3A%20100%2C%0A%09xspeed%3A%202%2C%0A%09yspeed%3A%200%2C%0A%09xdelta%3A%20100%2C%0A%09ydelta%3A%200%2C%0A%7D%2C%7B%0A%09type%3A%20%27platform%27%2C%0A%09x%3A%202400%2C%0A%09y%3A%20200%2C%0A%09w%3A%20100%2C%0A%7D%2C%7B%0A%09type%3A%20%27endcave%27%2C%0A%09x%3A%202800%2C%0A%09y%3A%20200%0A%7D%5D";
+	window.location = "game.html?level=1";
 }
 function btn3_update() {
-	
+	window.location = "game.html?level=2";
 }
 function btn4_update() {
-	
+	window.location = "game.html?level=3";
 }
 function btn5_update() {
-	
+	window.location = "game.html?level=4";
 }

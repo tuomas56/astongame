@@ -1,0 +1,145 @@
+[{
+	type: 'platform',
+	x: 0, 
+	y: 200,
+	w: 100
+},{
+	type: 'platform',
+	x: 150,
+	y: 250,
+	w: 50
+},{
+	type: 'platform',
+	x: 250,
+	y: 350,
+	w: 50,
+},{
+	type: 'platform',
+	x: 350,
+	y: 250,
+	w: 50,
+},{
+	type: 'platform',
+	x: 450,
+	y: 300,
+	w: 50,
+},{
+	type: 'platform', 
+	x: 550,
+	y: 400,
+	w: 100,
+},{
+	type: 'movingplatform',
+	x: 750,
+	y: 250,
+	w: 50,
+	xdelta: 100,
+	ydelta: 0,
+	xspeed: 2,
+	yspeed: 0,
+},{
+	type: 'platform',
+	x: 950,
+	y: 350,
+	w: 50,
+},{
+	type: 'movingplatform',
+	x: 1050, 
+	y: 450,
+	w: 100, 
+	xdelta: 100,
+	ydelta: 25,
+	xspeed: 2,
+	yspeed: 1,
+},{
+	type: 'oilpipe',
+	x: 1250,
+	y: 600,
+	oilrate: 0.5,
+},{
+	type: 'breakingplatform', 
+	x: 1300,
+	y: 350,
+	w: 150,
+},{
+	type: 'oilpipe',
+	x: 1350,
+	y: 600,
+	oilrate: 0.25, 
+},{
+	type: 'slippingplatform'
+	x: 1500,
+	y: 500,
+	w: 100,
+},{
+	type: 'movingplatform',
+	x: 1600,
+	y: 300,
+	w: 50, 
+	xdelta: 0,
+	ydelta: 200,
+	xspeed: 0,
+	yspeed: 3,
+},{
+	type: 'oilpipe',
+	x: 1600,
+	y: 600,
+	oilrate: 0.5,
+},{ 
+	type: 'movingplatform',
+	x: 1700,
+	y: 250, 
+	w: 100,
+	xdelta: 100,
+	ydelta: 0,
+	xspeed: 2,
+	yspeed: 0,
+},{
+	type: 'platform',
+	x: 2000,
+	y: 200, 
+	w: 100,
+},{
+	type: 'platform',
+	x: 2150,
+	y: 250, 
+	w: 50,
+},{
+	type: 'slippingplatform',
+	x: 2250,
+	y: 300, 
+	w: 50,
+},{ 
+	type: 'platform',
+	x: 2350, 
+	y: 250,
+	w: 50,
+},{ 
+	type: 'movingplatform',
+	x: 2450,
+	y: 200,
+	w: 100
+	xdelta: 100,
+	ydelta: 0,
+	xspeed: 2,
+	yspeed: 0,
+},{ 
+	type: 'movingplatform',
+	x: 2650,
+	y: 250,
+	w: 100, 
+	xdelta: 250,
+	ydelta: 0,
+	xspeed: 4,
+	yspeed: 0,
+},{
+	type: 'oilpipe',
+	x: 3050,
+	y: 600, 
+	oilrate: 0.75,
+},{
+	type: 'cave',
+	x: 3100,
+	y: 200, 
+	w: 100,
+}]
