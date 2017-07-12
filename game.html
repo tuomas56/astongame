@@ -1,19 +1,37 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8" />
-	<script type="text/javascript" src="libs/ClassLoader.js"></script>
-	<script type="text/javascript">
-		// Load in the classes and tutorial1.js
-		new ClassLoader("js/game.js");
-	</script>
+    <meta charset="UTF-8" />
+    <script type="text/javascript" src="libs/ClassLoader.js"></script>
+    <script type="text/javascript">
+        // Load in the classes and tutorial1.js
+        new ClassLoader("js/game.js");
+    </script>
 
     <style type="text/css">
         body {
             margin: 0;
+            background-color: rgb(184, 219, 239);
+        }
+        
+        canvas {
+            position: absolute;
+            top: calc(50% - 300px);
+            left: calc(50% - 400px);
+        }
+        
+        #logo {
+            position: absolute;
+            top: 0;
+            left: calc(50% - 282px);
         }
     </style>
 </head>
+
 <body>
+    <img src="img/logo.png" id="logo" />
+
 </body>
+
 </html>
