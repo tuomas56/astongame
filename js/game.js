@@ -136,7 +136,7 @@ var levels=[
 	w: 150,
 	xspeed: 0,
 	yspeed: 1,
-	xdelta: 0;
+	xdelta: 0,
 	ydelta: 100,
 },{
 	type: 'platform',
@@ -354,7 +354,7 @@ var levels=[
 	y: 600,
 	oilrate: 0.25, 
 },{
-	type: 'slippingplatform'
+	type: 'slippingplatform',
 	x: 1500,
 	y: 500,
 	w: 100,
@@ -405,7 +405,7 @@ var levels=[
 	type: 'movingplatform',
 	x: 2450,
 	y: 200,
-	w: 100
+	w: 100,
 	xdelta: 100,
 	ydelta: 0,
 	xspeed: 2,
