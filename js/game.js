@@ -1,6 +1,6 @@
 var game = new Game(800, 600, "Game");
 
-var level;
+var level, levelno;
 
 var levels=[
 [{
@@ -11,18 +11,18 @@ var levels=[
 	h: 200,	
 },{
 	type: "platform",
-	x: 250,
+	x: 300,
 	y: 200,
 	w: 100,
 	h: 200,
 },{
 	type: "platform",
-	x: 325,
+	x: 450,
 	y: 200,
 	w: 50,
 },{
 	type: "platform",
-	x: 525,
+	x: 545,
 	y: 200,
 	w: 100,
 },{
@@ -41,29 +41,24 @@ var levels=[
 	y: 350,
 	w: 150,
 },{
-	type: "babybear",
-	x: 950,
-	y: 400,
-	w: 50,
-},{
 	type: "platform",
-	x: 1050,
+	x: 1150,
 	y: 290,
 	w: 50,
 },{
 	type: "platform",
-	x: 1100,
+	x: 1300,
 	y: 240,
 	w: 50,
 },{
 	type: "platform",
-	x: 1200,
+	x: 1350,
 	y: 200,
 	w: 100,
 },{
 	type: "movingplatform",
-	x: 1250,
-	y: 300,
+	x: 1500,
+	y: 250,
 	w: 150,
 	xdelta: 0,
 	ydelta: 100,
@@ -71,21 +66,20 @@ var levels=[
 	yspeed: 1,	
 },{
 	type: "platform",
-	x: 1350,
+	x: 1700,
 	y: 400,
 	w: 100,
 },{
 	type: "platform",
-	x: 1400,
+	x: 1850,
 	y: 400,
 	w: 50,
 },{
 	type: "endcave",
-	x: 1500,
+	x: 2000,
 	y: 400,
 	w: 300,
-}
-],[{
+}],[{
 	type: 'platform',
 	x: 100,
 	y: 200,
@@ -167,6 +161,11 @@ var levels=[
 	x: 2400,
 	y: 200,
 	w: 100,
+},{
+	type: 'endcave',
+	x: 2600, 
+	y: 200,
+	w:100
 }
 ],[{
 	type: 'platform',	
@@ -185,56 +184,56 @@ var levels=[
 	w: 150,
 },{
 	type: 'platform',
-	x: 400,
+	x: 450,
 	y: 300,
 	w: 100, 
 },{
 	type: 'platform',
-	x: 550,
+	x: 600,
 	y: 350,
 	w: 100,
 },{
 	type: 'platform',
-	x: 700,
+	x: 750,
 	y: 200,
 	w: 100
 },{
 	type: 'platform',
-	x: 800,
+	x: 875,
 	y: 250,
 	w: 100,
 },{
 	type: 'platform',
-	x: 1000,
+	x: 1050,
 	y: 300,
 	w: 100,
 },{
 	type: 'platform',
-	x: 1150,
-	y: 400,
+	x: 1200,
+	y: 350,
 	w: 100,
 },{
 	type: 'pipe',
-	x: 1325,
+	x: 1375,
 	y: 600,
 },{
 	type: 'platform',
-	x: 1400,
+	x: 1450,
 	y: 200,
 	w: 200,
 },{
 	type: 'platform',
-	x: 1700,
+	x: 1750,
 	y: 200,
 	w: 100,
 },{
 	type: 'platform', 
-	x: 1900,
+	x: 1950,
 	y: 200,
 	w: 100,
 },{
 	type: 'movingplatform',
-	x: 2000,
+	x: 2050,
 	y: 250,
 	w: 100,
 	xdelta: 100,
@@ -243,8 +242,8 @@ var levels=[
 	yspeed: 0,
 },{
 	type: 'movingplatform',
-	x: 2100,
-	y: 300,
+	x: 2300,
+	y: 200,
 	w: 100,
 	xdelta: 0,
 	ydelta: 100,
@@ -252,7 +251,7 @@ var levels=[
 	yspeed: 2,
 },{
 	type: 'platform',
-	x: 2300,
+	x: 20,
 	y: 200,
 	w: 100,
 },{
@@ -277,12 +276,12 @@ var levels=[
 	w: 100,
 },{
 	type: 'platform',
-	x: 2900,
-	y: 300, 
+	x: 2850,
+	y: 250, 
 	w: 100,
 },{
 	type: 'endcave',
-	x: 3100, 
+	x: 3050, 
 	y: 200,
 	w:100
 }],[{
@@ -293,12 +292,12 @@ var levels=[
 },{
 	type: 'platform',
 	x: 150,
-	y: 250,
+	y: 200,
 	w: 50
 },{
 	type: 'platform',
 	x: 250,
-	y: 350,
+	y: 200,
 	w: 50,
 },{
 	type: 'platform',
@@ -313,7 +312,7 @@ var levels=[
 },{
 	type: 'platform', 
 	x: 550,
-	y: 400,
+	y: 375,
 	w: 100,
 },{
 	type: 'movingplatform',
@@ -327,13 +326,13 @@ var levels=[
 },{
 	type: 'platform',
 	x: 950,
-	y: 350,
+	y: 325,
 	w: 50,
 },{
 	type: 'movingplatform',
 	x: 1050, 
-	y: 450,
-	w: 100, 
+	y: 375,
+	w: 75, 
 	xdelta: 100,
 	ydelta: 25,
 	xspeed: 2,
@@ -341,37 +340,27 @@ var levels=[
 },{
 	type: 'oilpipe',
 	x: 1250,
-	y: 600,
-	oilrate: 0.5,
+	y: 700,
+	oilrate: 1.15,
 },{
-	type: 'breakingplatform', 
-	x: 1300,
-	y: 350,
+	type: 'platform', 
+	x: 1275,
+	y: 225,
 	w: 150,
 },{
-	type: 'oilpipe',
-	x: 1350,
-	y: 600,
-	oilrate: 0.25, 
-},{
-	type: 'slippingplatform',
-	x: 1500,
-	y: 500,
-	w: 100,
-},{
 	type: 'movingplatform',
-	x: 1600,
-	y: 300,
+	x: 1550,
+	y: 225,
 	w: 50, 
 	xdelta: 0,
-	ydelta: 200,
+	ydelta: 125,
 	xspeed: 0,
-	yspeed: 3,
+	yspeed: 1.5,
 },{
 	type: 'oilpipe',
 	x: 1600,
-	y: 600,
-	oilrate: 0.5,
+	y: 700,
+	oilrate: 2,
 },{ 
 	type: 'movingplatform',
 	x: 1700,
@@ -417,18 +406,19 @@ var levels=[
 	w: 100, 
 	xdelta: 250,
 	ydelta: 0,
-	xspeed: 4,
+	xspeed: 1.5,
 	yspeed: 0,
 },{
 	type: 'oilpipe',
-	x: 3050,
-	y: 600, 
-	oilrate: 0.75,
+	x: 2700,
+	y: 700, 
+	oilrate: 3,
 },{
-	type: 'cave',
+	type: 'endcave',
 	x: 3100,
-	y: 200, 
+	y: 400,
 	w: 100,
+	h: 300,
 }],[{
 	type: "platform",
 	x: 0,
@@ -436,45 +426,45 @@ var levels=[
 	w: 100,
 },{
 	type: "platform",
-	x: 150,
-	y: 250,
-	w: 50,
+	x: 100,
+	y: 200,
+	w: 100,
 },{
 	type: "platform",
 	x: 250,
-	y: 350,
-	w: 50,
+	y: 250,
+	w: 100,
 },{
 	type: "movingplatform",
 	x: 350,
-	y: 350,
-	w: 50,
+	y: 300,
+	w: 75,
 	xdelta: 150,
 	ydelta: 0,
 	xspeed: 2,
 	yspeed: 0,
 },{
 	type: "platform",
-	x: 550,
-	y: 450,
-	w: 50,
+	x: 600,
+	y: 250,
+	w: 100,
 },{
 	type: "oilpipe",
-	x: 650,
+	x: 450,
 	y: 600,
 	w: 100,
-	oilrate: 0.5,
+	oilrate: 2,
 },{
 	type: "platform",
 	x: 750,
 	y: 200,
 	w: 150,
-},{
+},{ 
 	type: "movingplatform",
-	x: 1000,
+	x: 900,
 	y: 200,
 	w: 150,
-	xdelta: 250,
+	xdelta: 100,
 	ydelta: 0,
 	xspeed: 1,
 	yspeed: 0,
@@ -486,35 +476,35 @@ var levels=[
 },{
 	type: "movingplatform",
 	x: 1400,
-	y: 300,
+	y: 200,
 	w: 50,
 	xdelta: 0,
-	ydelta: 100,
+	ydelta: 75,
 	xspeed: 0,
 	yspeed: 2,
 },{
 	type: "platform",
 	x: 1500,
-	y: 400,
+	y: 300,
 	w: 50,
 },{
 	type: "movingplatform",
 	x: 1600,
-	y: 400,
+	y: 350,
 	w: 50,
 	xdelta: 100,
-	ydelta: 100,
+	ydelta: 75,
 	xspeed: 1,
 	yspeed: 1,
 },{
 	type: "platform",
 	x: 1750,
-	y: 500,
+	y: 400,
 	w: 100,
 },{
 	type: "movingplatform",
-	x: 1850,
-	y: 500,
+	x: 1900,
+	y: 250,
 	w: 100,
 	ydelta: 150,
 	xdelta: 0,
@@ -522,8 +512,8 @@ var levels=[
 	yspeed: 2,
 },{
 	type: "movingplatform",
-	x: 2000,
-	y: 500,
+	x: 2100,
+	y: 300,
 	w: 100,
 	ydelta: -150,
 	xdelta: 0,
@@ -531,33 +521,31 @@ var levels=[
 	yspeed: 2,
 },{
 	type: "movingplatform",
-	x: 2150,
-	y: 500,
+	x: 2250,
+	y: 200,
 	w: 100,
 	ydelta: 150,
 	xdelta: 0,
 	xspeed: 0,
 	yspeed: 2,
 },{
-	type: "oilpipe",
-	x: 2200,
-	y: 600,
-	w: 100,
-	oilrate: 0.8,
-},{
 	type: "movingplatform",
-	x: 2200,
-	y: 350,
+	x: 2350,
+	y: 250,
 	w: 100,
 	ydelta: 0,
 	xdelta: 250,
-	xspeed: 2,
+	xspeed: 1,
 	yspeed: 0,
 },{
-	type: "platform",
-	x: 2500,
+	type: "movingplatform",
+	x: 2750,
 	y: 200,
 	w: 150,
+	ydelta: 200,
+	xdelta: 0,
+	xspeed: 0,
+	yspeed: 2,
 },{
 	type: "slippingplatform",
 	x: 2700,
@@ -565,33 +553,33 @@ var levels=[
 	w: 150,
 },{
 	type: "platform",
-	x: 2900,
+	x: 2950,
 	y: 450,
 	w: 100,
 },{
 	type: "platform",
-	x: 3050,
-	y: 500,
+	x: 3100,
+	y: 400,
 	w: 50,
 },{
 	type: "platform",
-	x: 3200,
-	y: 500,
+	x: 3250,
+	y: 450,
 	w: 100,
 },{
 	type:"breakingplatform",
-	x:	3350,
-	y:	500,
+	x:	3400,
+	y:	400,
 	w: 100,
 	breaktime: 1.5,
 },{
 	type: "platform",
-	x: 3500,
-	y: 500,
+	x: 3550,
+	y: 450,
 	w: 100,
 },{
 	type: "endcave",
-	x: 3700,
+	x: 3750,
 	y: 400,
 	w: 100,
 }
@@ -610,6 +598,7 @@ var left, right, up;
 var bear;
 var lt = 0;
 var bg_timer = new Timer(1100);
+var bgaudio;
 
 function getParameterByName(name) {
     var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
@@ -695,11 +684,11 @@ Bear.prototype.update = function() {
     if (right.isDown()) {
         this.object.playAnimation("right");
         this.object.setStopFrame(0);
-        this.vx = 100*this.vxm + 60;
+        this.vx = 150*this.vxm;
     } else if (left.isDown()) {
         this.object.playAnimation("left");
         this.object.setStopFrame(8);
-        this.vx = -100*this.vxm + 60;
+        this.vx = -150*this.vxm + 60;
     } else if (!this.sliding) {
         this.vx = 0;
         this.object.stop();
@@ -710,7 +699,7 @@ Bear.prototype.update = function() {
 	}
 
     if (this.object.getY() > 600 - 140) {
-        game.pause();
+		window.location="gameend.html?back=" + encodeURIComponent(window.location);
     }
 
     this.x += this.vx / 60;
@@ -805,7 +794,7 @@ function OilDrop(x, y, sprite) {
 }
 
 OilDrop.prototype.create = function() {
-	this.object = this.sprite.create(this.x, this.y, 10, 20);
+	this.object = this.sprite.create(this.x - camerax, this.y, 10, 20);
 	this.sprite.setGravityY(200);
 }
 
@@ -834,7 +823,11 @@ Cave.prototype.update = function() {
 	this.object.setX(this.x - camerax);
 	
 	game.checkCollision(this.object, bear.object, function() {
-		game.pause();
+		if (levelno < 4) {
+			window.location = "game.html?level=" + (levelno + 1) + "&audio=" + bgaudio.currentTime;
+		} else {
+			window.location = "donate.html";
+		}
 	});
 }
 
@@ -861,7 +854,7 @@ function standard_platform(x, y, w, h) {
 }
 
 function fragile_platform(x, y, w, h, delay) {
-	return new FragilePlatform(x, 600 - y, w, 500, fragileplatform_sprite, delay);
+	return new FragilePlatform(x, 600 - y, w, 500, fragileplatform_sprite, 1000*delay);
 }
 
 function moving_platform(x, y, w, h, xdelta, ydelta, xspeed, yspeed) {
@@ -877,11 +870,19 @@ function pipe(x, y, speed) {
 }
 
 function cave(x, y) {
-	return new Cave(x, y, cave_sprite);
+	return new Cave(x, 600 - y, cave_sprite);
 }
 
 function preload() {
-	level = levels[eval(getParameterByName("level"))];
+	
+	levelno = eval(getParameterByName("level"));
+	level = levels[levelno];
+	
+	bgaudio = new Audio("audio/level.mp3");
+	bgaudio.play();
+	bgaudio.currentTime = eval(getParameterByName("audio"));
+	
+	splash_audio = new Audio("audio/splash.mp3");
 	
     platform_sprite = new Sprite("img/tundra.png");
     water_sprite = new Sprite("img/iceWater.png");
@@ -913,7 +914,7 @@ function preload() {
 				objects.push(cave(object.x, object.y));
 				break;
 			case 'breakingplatform':
-				objects.push(fragile_platform(object.x, object.y, object.w, object.h, object.delay));
+				objects.push(fragile_platform(object.x, object.y, object.w, object.h, object.breaktime));
 				break;
 			case 'slidingplatform':
 				objects.push(sliding_platform(object.x, object.y, object.w, object.h));

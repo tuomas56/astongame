@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+ 
+    <style type="text/css">
+        body {
+            margin: 0;
+            background-color: rgb(184, 219, 239);
+        }
+        #logo {
+            top: 0;
+			left: calc(50% - 180px);
+            position: absolute;
+	
+            
+        }
+		
+		p {left: 50px; font-family:Calibri; 
+			font-size:150%;}
+		
+		div {
+			top: 50%;
+			text-align: center;
+		}
+		
+		button {
+			
+		}
+    </style>
+</head>
+
+<body>
+<br>
+<br>
+<br>
+<br>
+<div style="margin:50px;">
+<p>
+Climate change got the better of you.
+</p>
+
+	  <img src="img/YouLose.png" id="logo" />
+	   <button type="button" id="restart">Restart Level</button> 
+	     <button type="button" id="menu">Main Menu</button> 
+</div>
+
+<script type="text/javascript">
+	function getParameterByName(name) {
+    var match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+    return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+}
+
+	document.getElementById("restart").addEventListener("click", function() {
+		window.location = getParameterByName("back");
+	});
+	
+	document.getElementById("menu").addEventListener("click", function() {
+		window.location = "index.html";
+	});
+</script>
+</body>
+
+</html>

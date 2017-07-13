@@ -3,6 +3,7 @@
 ///////////////////////////////////////////////////////////////
 var game = new Game(800, 600, "Polar Dash");
 var levelnumber;
+var bgmusic;
 
 
 
@@ -25,9 +26,13 @@ function preload() {
 	level3button = new Button("img/Level3.png", 350, 100, 530, 195);
 	level4button = new Button("img/Level4.png", 350, 100, 10, 425);
 	level5button = new Button("img/Level5.png", 350, 100, 440, 415);
+	
+	bgmusic = new Audio("audio/menu.mp3");
 }
 
 function create() {
+	
+	bgmusic.play();
 	game.setBackgroundImage("background", 800, 600, 0, 0);
 	
 	playbutton.createButton();
@@ -66,17 +71,17 @@ function levelSelect() {
 }
 
 function btn1_update() {
-	window.location = "game.html?level=0";
+	window.location = "game.html?level=0&audio=0";
 }
 function btn2_update() {
-	window.location = "game.html?level=1";
+	window.location = "game.html?level=1&audio=0";
 }
 function btn3_update() {
-	window.location = "game.html?level=2";
+	window.location = "game.html?level=2&audio=0";
 }
 function btn4_update() {
-	window.location = "game.html?level=3";
+	window.location = "game.html?level=3&audio=0";
 }
 function btn5_update() {
-	window.location = "game.html?level=4";
+	window.location = "game.html?level=4&audio=0";
 }

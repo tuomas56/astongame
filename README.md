@@ -1,1 +1,1 @@
-# astongame
+Open index.html to start
